@@ -7,13 +7,18 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Inherit from dada device
 $(call inherit-product, device/xiaomi/dada/device.mk)
 
-PRODUCT_NAME := lineage_dada
+# Inherit some common Infinity-X stuff.
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+
+# Infinity-X flags
+WITH_GAPPS := true
+INFINITY_MAINTAINER := SdmDeveloper
+TARGET_HAS_UDFPS := true
+
+PRODUCT_NAME := infinity_dada
 PRODUCT_DEVICE := dada
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
